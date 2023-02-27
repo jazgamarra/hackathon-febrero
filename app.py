@@ -26,11 +26,11 @@ def opciones_de_juego():
 
     # Redireccionar a la pagina que correspodnda 
     if categoria == 'castellano': 
-        url_nuestro = '#castellano'
+        url_nuestro = url_for('static', filename='game1/index.html')
     elif categoria == 'matematicas': 
-        url_nuestro = '#matematica'
+        url_nuestro = url_for('static', filename='game2/index.html')
     elif categoria == 'gestion_emocional': 
-        url_nuestro = '#emocional'
+        url_nuestro = url_for('static', filename='game3/index.html')
     
     return render_template('opciones_de_juego.html', url_juego=url_nuestro) 
 
