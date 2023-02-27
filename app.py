@@ -9,16 +9,34 @@ def home():
 def eleccion():
     if request.method == 'POST':
         categoria_elegida = request.form['categoria']
-        return redirect()
-    return render_template('eleccion.html')
+        return redirect(url_for('opciones_de_juego', categoria=categoria_elegida))
+    return render_template('elegir_categoria.html')
 
 @app.route('/manual')
 def manual():
     return render_template('manual.html')
 
-@app.route('/opciones_de_juego')
+@app.route('/opciones_de_juego', methods=['GET', 'POST'])
 def opciones_de_juego():
-    return render_template('opciones_de_juego.html')
+    # Obtener la categoria a la que corresponde 
+    try: 
+        categoria = request.args['categoria']
+    except: 
+        print ('No se tiene una categoria valida')
+
+    # Redireccionar a la pagina que correspodnda 
+    if categoria == 'castellano': 
+        url_nuestro = '#castellano'
+    elif categoria == 'matematicas': 
+        url_nuestro = '#matematica'
+    elif categoria == 'gestion_emocional': 
+        url_nuestro = '#emocional'
+    
+    return render_template('opciones_de_juego.html', url_juego=url_nuestro) 
+
+@app.route('/crear_juego')
+def crear_juego():
+    return render_template('crear_juego.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)     
