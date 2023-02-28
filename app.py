@@ -26,6 +26,30 @@ def opciones_de_juego():
     except: 
         print ('No se tiene una categoria valida')
 
+    # Obtener la url del juego
+    url_nuestro = redireccionar_al_juego(categoria)
+    
+    return render_template('opciones_de_juego.html', url_juego=url_nuestro, url_crear=url_for('crear_juego', categoria=categoria)) 
+
+@app.route('/crear_juego', methods=['GET', 'POST'])
+def crear_juego():
+    if request.method == 'POST':
+        try: 
+            categoria = request.args['categoria']
+        except: 
+            categoria = None 
+            print ('No se tiene una categoria valida')
+             
+        pregunta = request.form['pregunta']
+        respuestas = request.form['respuesta']
+        incorrecta1 = request.form['incorrecta1']
+        incorrecta2 = request.form['incorrecta2']
+
+        print (categoria, pregunta, respuestas, incorrecta1, incorrecta2)
+
+    return render_template('crear_juego.html')
+
+def redireccionar_al_juego(categoria): 
     # Redireccionar a la pagina que correspodnda 
     if categoria == 'castellano': 
         url_nuestro = url_for('static', filename='game1/index.html')
@@ -33,23 +57,9 @@ def opciones_de_juego():
         url_nuestro = url_for('static', filename='game2/index.html')
     elif categoria == 'gestion_emocional': 
         url_nuestro = url_for('static', filename='game3/index.html')
-    
-    return render_template('opciones_de_juego.html', url_juego=url_nuestro) 
 
-@app.route('/crear_juego')
-def crear_juego():
-    if request.method == 'POST':
-        request.form['pregunta']
-        request.form['respuesta']
-        request.form['incorrecta1']
-        request.form['incorrecta2']
-
-        print ('La pregunta es: ', request.form['pregunta'])
-        print ('La respuesta es: ', request.form['respuesta'])
-        print ('La incorrecta1 es: ', request.form['incorrecta1'])
-        print ('La incorrecta2 es: ', request.form['incorrecta2'])
-    
-    return render_template('crear_juego.html')
+    return url_nuestro
 
 if __name__ == '__main__':
     app.run(debug=True)      
+
