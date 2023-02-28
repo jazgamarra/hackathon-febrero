@@ -57,7 +57,6 @@ def redireccionar_al_juego(categoria):
         url_nuestro = url_for('static', filename='game2/index.html')
     elif categoria == 'gestion_emocional': 
         url_nuestro = url_for('static', filename='game3/index.html')
-
     return url_nuestro
 
 if __name__ == '__main__':

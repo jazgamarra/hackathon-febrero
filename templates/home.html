@@ -1,20 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="./static/css/style.css">
+		<title>Juego_proyecto</title>
 </head>
-<body>
-    <a href="{{url_for('manual')}}">Ver el manual de usuario</a>
-    <h1> Bienvenido a NNN! </h1>
-    <h2> Una web pensada para mejorar la interactividad en clase utilizando herramientas tecnologicas </h2>
+	<body> 
+		<div> 
+				<header> 
+				<nav class="flex items-center justify-between flex-wrap bg-amber-500 p-6">
+					<!-- Colocar logo-->
+						<div class="flex items-center flex-shrink-0 text-white mr-6">
 
-    <!-- Boton que lleva a la vista: Eleccion de categorias -->
-    <a href="{{url_for('eleccion')}}"> Iniciar! </a>
+							<img src="./static/images/logo_.png" alt="Logo" class="h-16 w-40">
+							<!-- <span class="font-semibold text-xl tracking-tight">Logo del Juego </span>
+							-->
+						</div>
+						<div class="block lg:hidden">
+							<button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+								<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+							</button>
+						</div>
+						<div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+							<div class="text-sm lg:flex-grow">
+								
+							</div>
+							<div class="justify-between">
+								
+                                <img src="./static/images/idiomas_button_violet.png" class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110">
+								<!-- Boton de instrucciones --> 
+								<a href="{{url_for('manual')}}">								
+									<img src="./static/images/button_interrogacion_violet.png".png class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110">
+								</a>
+							</div>
+						</div>
+				</header>
+		</div>
 
-    <!-- Boton que lleva a la vista: Manual de usuario -->
 
-</body>
+		<!-- Contenedor -->
+
+		<div class="flex justify-between max-w-3xl mx-auto mt-20"> 
+			
+		<!--Mascota-->
+			<div class="mr-40">
+				<img src="./static/images/escuchando_musica.png" alt="mascota" class="w-80 h-100">
+			</div>
+		
+		<!-- Jugar-->
+			<div> 
+							<!--Texto nombre del juego-->
+				<div class="text-4xl text-white"> 
+					<h1 class="font-bold text-6xl"> Jaggy Game </h1>
+				</div>
+							<!-- Boton de jugar-->
+				<div class="w-60 h-40 mx-auto mt-20"> 
+					<a href="{{url_for('eleccion')}}">
+					<img src="./static/images/button_jugar_inicio.png" alt="Button Jugar" class="hover:transform hover:-translate-y-1 hover:scale-110">
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+
+
+		
+		</div>
+			
+
+		
+
+
+			<!--<div class="flex items-center">
+<img src="button_efect.png" alt="Descripción de la imagen">
+<h1 class="ml-4">Jugar ahora</h1>
+				</div>
+			-->
+
+			<!-- <div class="relative">
+								<button class=" absolute top-60 right-48 bg-amber-500 hover:bg-violet-500 text-white font-bold py-10 px-14 rounded-full ">
+								Jugar ahora
+								</button>
+						</div>
+	-->
+
+
+
+	</body>
 </html>
