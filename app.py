@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for 
+import requests 
 
 app = Flask(__name__)
 
@@ -37,7 +38,18 @@ def opciones_de_juego():
 
 @app.route('/crear_juego')
 def crear_juego():
+    if request.method == 'POST':
+        request.form['pregunta']
+        request.form['respuesta']
+        request.form['incorrecta1']
+        request.form['incorrecta2']
+
+        print ('La pregunta es: ', request.form['pregunta'])
+        print ('La respuesta es: ', request.form['respuesta'])
+        print ('La incorrecta1 es: ', request.form['incorrecta1'])
+        print ('La incorrecta2 es: ', request.form['incorrecta2'])
+    
     return render_template('crear_juego.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)     
+    app.run(debug=True)      
