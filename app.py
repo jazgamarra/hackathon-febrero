@@ -10,7 +10,7 @@ def obtener_url_juegos(categoria):
         'matematicas1': url_for('static', filename='game2/index.html'),  # fracciones 
         'matematicas2': url_for('static', filename='game3/index.html'), # operaciones basicas 
         'gestion_emocional': url_for('static', filename='game4/index.html'), 
-        'crear_juego': '#'
+        'crear_juego': url_for('static', filename='game1/index.html')
     }
     return url[categoria]
 
@@ -43,20 +43,6 @@ def manual():
 # Ruta de la pagina de crear juego
 @app.route('/crear_juego', methods=['GET', 'POST'])
 def crear_juego():
-    if request.method == 'POST':
-        try: 
-            categoria = request.args['categoria']
-        except: 
-            categoria = None 
-            print ('No se tiene una categoria valida')
-             
-        pregunta = request.form['pregunta']
-        respuestas = request.form['respuesta']
-        incorrecta1 = request.form['incorrecta1']
-        incorrecta2 = request.form['incorrecta2']
-
-        print (categoria, pregunta, respuestas, incorrecta1, incorrecta2)
-
     return render_template('crear_juego.html')
 
 @app.route('/prueba_manual')
@@ -81,13 +67,12 @@ def castellano():
 
 @app.route('/manual_crear_juego')
 def manual_crear_juego():
-    return render_template('manuales/manual_crear_juego.html', url=obtener_url_juegos('crear_juego'))
+    return render_template('crear_juego.html', url=obtener_url_juegos('crear_juego'))
 
 @app.route('/idiomas')
 def idiomas():
     return render_template('idiomas.html')  
 
-if __name__ == '__main__':
-    app.run(debug=True)      
-
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", debug=True, port=8080)
 

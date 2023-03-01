@@ -1,6 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="./static/css/style.css">
+		<title>Juego_proyecto</title>
+</head>
+	<body class="text-white"> 
+		<div> 
+				<header> 
+				<nav class="flex items-center justify-between flex-wrap bg-amber-500 p-2">
+					<!-- Colocar logo-->
+						<div class="flex items-center flex-shrink-0 text-white ml-10">
+
+							<a href="{{url_for('home')}}">
+								<img src="./static/images/logo_.png" alt="Logo" class="h-16 w-40">
+							</a>
+							<!-- <span class="font-semibold text-xl tracking-tight">Logo del Juego </span>
+							-->
+						</div>
+						<div class="block lg:hidden">
+							<button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+								<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+							</button>
+						</div>
+						<div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+							<div class="text-sm lg:flex-grow">
+								
+							</div>
+							<div class="justify-between">
+								
+                                <a href="{{url_for('idiomas')}}">
+									<img src="./static/images/idiomas_button_violet.png" class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110">
+								</a>
+								<!-- Boton de instrucciones --> 
+								<a href="{{url_for('manual')}}">								
+									<img src="./static/images/button_interrogacion_violet.png".png class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110 mr-10">    
+								</a>
+							</div>
+						</div>
+				</header>
+		</div>
+
+
+		<!-- Contenedor -->
+
+		<div class="flex justify-between max-w-2xl mx-auto mt-10"> 
+		
+		
+		<!-- Jugar-->
+			<div class="bg-amber-500 p-10 rounded-2xl opacity-80"> 
+				<form action="" method="post" class="flex flex-col">
+                    <h2 class="font-bold text-2xl">Instrucciones Generales</h2>
+                    <p class=" pb-5">Esta opcion te permite crear tus propios juegos de comunicacion. El desafio es identificar una imagen y brindar 3 posibles opciones de como se escribe correctamente ese objeto</p>              
+                    <div class="ml-10 pb-3">
+                        <p>   • Agregar la imagen.</p>
+                        <p>   • Agregar las opciones de posibles respuestas.</p>
+                    </div>   
+                    <h2 class="font-bold text-2xl">Paso 1</h2>
+                    <div class="ml-10 pb-3">
+                        <p>   • Inserte su imagen.</p>
+                        <div class = "text-black">  
+                            <input type="file" name="tipo_de_dato"/>
+                        </div>
+                    </div>
+                    <h2 class="mt-4 font-bold text-2xl">Paso 2</h2>
+                    <div class="ml-10 pb-3">
+                        <p>   • Inserte la opcion 1.</p>
+                        <div class = "text-black">  
+                            <input type="text" name="tipo_de_dato"/>
+                        </div>
+                        <p>   • Inserte la opcion 2.</p>
+                        <div class = "text-black">  
+                            <input type="text" name="tipo_de_dato"/>
+                        </div>
+                        <p>   • Inserte la opcion 3.</p>
+                        <div class = "text-black">  
+                            <input type="text" name="tipo_de_dato"/>
+                        </div>
+
+                        <div>
+                            <div class="w-40 h-20 mx-auto mt-5"> 
+                                <a href="{{url}}">
+                                <img src="./static/images/button_jugar_inicio.png" alt="Button Jugar" class="hover:transform hover:-translate-y-1 hover:scale-110">
+                                </a>
+                            </div>
+                       </div>
+                </form>
+			</div>
+
+		</div>
+		</div>
+	</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,4 +123,4 @@
         <input type="submit" value="Enviar datos!">
     </form>
 </body>
-</html>
+</html> -->
