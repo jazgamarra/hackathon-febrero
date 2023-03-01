@@ -105,11 +105,11 @@ def qr_generator(url):
 
 @app.route('/generar_qr')
 def generar_qr(): 
-    ip = '192.168.100.130:8080'
-    url = 'http://'+ip+'/static/game2/index.html'
+    ip = '127.0.0.1:8080'
+    url = 'http://'+ip+'/static/game4/index.html'
     qr_generator (url)
     imagen = '/static/jaggy.png'
     return render_template('visualizar_qr.html', imagen=imagen)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True, port=8080) 
+    app.run(host="0.0.0.0", debug=True,port=8080) 
