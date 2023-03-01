@@ -1,19 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selecionar categoria</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-jS0y+V7IOQ8fRJWr7vVT4ONZ1V7Y9aLg1x/iG+6AZFJ6d/CU8gKjQoTpCJmOZvc7m1nJwwBzLs2yHZZLc//ig==" crossorigin="anonymous" />
+		<script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>     
+		<link rel="stylesheet" href="./static/css/style.css">
+        <link rel="stylesheet" href="./static/css/categories.css">
+		<title>Juego_proyecto</title>
 </head>
-<body>  
-    <h2> Seleccione la categoria que desea probar: </h2>
-    <form method="POST">
-        <select name="categoria">
-            <option value="castellano">Castellano</option>
-            <option value="matematicas">Matematicas</option>
-            <option value="gestion_emocional">Gestion emocional</option> 
-        </select>
-        <input type="submit" value="Enviar"> 
-</body>
+	<body> 
+		<div> 
+				<header> 
+				<nav class="flex items-center justify-between flex-wrap bg-amber-500 p-2">
+					<!-- Colocar logo-->
+						<div class="flex items-center flex-shrink-0 text-white mr-6">
+
+							<a href="{{url_for('home')}}">
+								<img src="./static/images/logo_.png" alt="Logo" class="h-16 w-40">
+                            </a> 
+						</div>
+						<div class="block lg:hidden">
+							<button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+								<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+							</button>
+						</div>
+						<div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+							<div class="text-sm lg:flex-grow">
+								
+							</div>
+							<div class="justify-between">
+								
+                                <img src="./static/images/idiomas_button_violet.png" class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110">
+								<!-- Boton de instrucciones --> 
+								<a href="{{url_for('manual')}}">								
+									<img src="./static/images/button_interrogacion_violet.png".png class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110">    
+								</a>
+							</div>
+						</div>
+				</header>
+		</div>
+
+		<div class="flex flex-row w-full ">
+            <!-- Contenedor -->
+            <div class="mt-20 "> 
+                <!--Mascota-->
+                <div class="w-1/2 ml-80">
+                    <img src="./static/images/abrazo.png" alt="mascota" class="">
+                </div>
+            </div>
+
+
+            <!-- Acordeon -->
+            <div class="w-1/2 mt-48">
+                <ul class="accordion-menu bg-amber-500">
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-road" aria-hidden="true"></i> Matematicas 
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                        <li><a href="{{url['matematicas1']}}"> Fracciones </a></li>
+                        <li><a href="{{url['matematicas2']}}"> Operaciones basicas </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-paper-plane" aria-hidden="true"></i> Castellano
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                        <li><a href="{{url['castellano']}}"> Identifica la palabra correcta  </a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-quote-left" aria-hidden="true"></i> Gestion emocional 
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                        <li><a href="{{url['gestion_emocional']}}"> Identifica tus emociones </a></li> 
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="dropdownlink"><i class="fa fa-motorcycle" aria-hidden="true"></i> Crear juego 
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <ul class="submenuItems">
+                        <li><a href="{{url['crear_juego']}}"> Crear juego... </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <script src="./static/js/script.js"></script>
+	</body>
 </html>
