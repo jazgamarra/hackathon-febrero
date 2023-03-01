@@ -59,6 +59,10 @@ def redireccionar_al_juego(categoria):
         url_nuestro = url_for('static', filename='game3/index.html')
     return url_nuestro
 
+@app.route('/tests')
+def tests():
+    return render_template('categorias_ale_conectar.html') 
+
 if __name__ == '__main__':
     app.run(debug=True)      
 
