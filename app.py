@@ -4,15 +4,26 @@ import requests
 app = Flask(__name__)
 
 # Funcion para obtener el diccionario de las URL de los juegos 
-def obtener_urls(): 
+def obtener_url_juegos(categoria): 
     url = {
         'castellano': url_for('static', filename='game1/index.html'), 
-        'matematicas1': url_for('static', filename='game2/index.html'),
-        'matematicas2': url_for('static', filename='game2/index.html'),
-        'gestion_emocional': url_for('static', filename='game3/index.html'), 
+        'matematicas1': url_for('static', filename='game2/index.html'),  # fracciones 
+        'matematicas2': url_for('static', filename='game3/index.html'), # operaciones basicas 
+        'gestion_emocional': url_for('static', filename='game4/index.html'), 
         'crear_juego': '#'
     }
-    return url 
+    return url[categoria]
+
+# Funcion para obtener el diccionario de las URL de los manuales 
+def obtener_url_manuales():
+    url = {
+        'castellano': url_for('castellano'), 
+        'matematicas1': url_for('matematicas1'),
+        'matematicas2' : url_for('matematicas2'),
+        'gestion_emocional': url_for('gestion_emocional'),
+        'crear_juego': url_for('manual_crear_juego')
+    }
+    return url
 
 # Ruta de la pagina principal
 @app.route('/')
@@ -22,7 +33,7 @@ def home():
 # Ruta de la pagina de eleccion de categoria
 @app.route('/elegir_categoria', methods=['GET', 'POST'])
 def eleccion():
-    return render_template('elegir_categoria.html', url=obtener_urls())
+    return render_template('elegir_categoria.html', url=obtener_url_manuales())
 
 # Ruta de la pagina de manual de usuario
 @app.route('/manual')
@@ -51,6 +62,26 @@ def crear_juego():
 @app.route('/prueba_manual')
 def prueba_manual():
     return render_template('prueba_manual.html')
+
+@app.route('/matematicas1')
+def matematicas1():
+    return render_template('manuales/matematicas1.html', url=obtener_url_juegos('matematicas1')) 
+
+@app.route('/matematicas2')
+def matematicas2():
+    return render_template('manuales/matematicas2.html', url=obtener_url_juegos('matematicas2'))
+
+@app.route('/gestion_emocional')
+def gestion_emocional():
+    return render_template('manuales/gestion_emocional.html', url=obtener_url_juegos('gestion_emocional'))
+
+@app.route('/castellano')
+def castellano():
+    return render_template('manuales/castellano.html', url=obtener_url_juegos('castellano'))
+
+@app.route('/manual_crear_juego')
+def manual_crear_juego():
+    return render_template('manuales/manual_crear_juego.html', url=obtener_url_juegos('crear_juego'))
 
 if __name__ == '__main__':
     app.run(debug=True)      
