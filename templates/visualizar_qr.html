@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="./static/css/style.css">
     <title>Document</title>
 </head>
-<body>
-    <img src="{{imagen}}" alt="qr">
+<body class="bg-amber-500">
+    <header> 
+        <nav class="flex items-center justify-between flex-wrap bg-amber-500 p-2">
+            <!-- Colocar logo-->
+                <div class="flex items-center flex-shrink-0 text-white ml-10">
+
+                    <a href="{{url_for('home')}}">
+                        <img src="./static/images/logo_.png" alt="Logo" class="h-16 w-40">
+                    </a>
+                    <!-- <span class="font-semibold text-xl tracking-tight">Logo del Juego </span>
+                    -->
+                </div>
+                <div class="block lg:hidden">
+                    <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+                        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                    </button>
+                </div>
+                <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                    <div class="text-sm lg:flex-grow">
+                        
+                    </div>
+                    <div class="justify-between">
+                        
+                        <a href="{{url_for('idiomas')}}">
+                            <img src="./static/images/idiomas_button_violet.png" class=" inline-block h-12 hover:transform hover:-translate-y-1 hover:scale-110">
+                        </a>
+                        <!-- Boton de instrucciones --> 
+                        <a href="{{url_for('manual')}}">								
+                            <img src="./static/images/button_interrogacion_violet.png".png class=" inline-block h-12 hover:transform hover:-translate-y-1 hover:scale-110 mr-10">    
+                        </a>
+                    </div>
+                </div>
+        </header>
+    <div class="flex justify-center align-center w-full mt-32">
+        <div class="mx-auto my-auto ">
+            <img src="{{imagen}}" alt="qr">
+        </div>
+    </div>
 </body>
 </html>

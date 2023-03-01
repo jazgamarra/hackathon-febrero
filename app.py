@@ -95,7 +95,7 @@ def qr_generator(url):
 
     # Pasamos los parametros de color y posicion de nuestro logo, tambien definimos el color que tendra nuestro QR
     qrcolor = 'Black'
-    qrimg = Qrcode.make_image(fill_color=qrcolor, back_color="white").convert('RGB')
+    qrimg = Qrcode.make_image(fill_color=qrcolor, back_color="orange").convert('RGB')
     pos = ((qrimg.size[0] - logo.size[0]) // 2, (qrimg.size[1] - logo.size[1]) // 2)
     qrimg.paste(logo, pos)
     # Guardamos nuestro codigo QR generado como una imagen

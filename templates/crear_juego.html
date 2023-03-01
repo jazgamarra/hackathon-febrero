@@ -10,7 +10,7 @@
 </head>
 	<body class="text-white"> 
 		<div> 
-				<header> 
+            <header> 
 				<nav class="flex items-center justify-between flex-wrap bg-amber-500 p-2">
 					<!-- Colocar logo-->
 						<div class="flex items-center flex-shrink-0 text-white ml-10">
@@ -33,11 +33,11 @@
 							<div class="justify-between">
 								
                                 <a href="{{url_for('idiomas')}}">
-									<img src="./static/images/idiomas_button_violet.png" class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110">
+									<img src="./static/images/idiomas_button_violet.png" class=" inline-block h-12 hover:transform hover:-translate-y-1 hover:scale-110">
 								</a>
 								<!-- Boton de instrucciones --> 
 								<a href="{{url_for('manual')}}">								
-									<img src="./static/images/button_interrogacion_violet.png".png class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110 mr-10">    
+									<img src="./static/images/button_interrogacion_violet.png".png class=" inline-block h-12 hover:transform hover:-translate-y-1 hover:scale-110 mr-10">    
 								</a>
 							</div>
 						</div>
@@ -68,17 +68,21 @@
                     </div>
                     <h2 class="mt-4 font-bold text-2xl">Paso 2</h2>
                     <div class="ml-10 pb-3">
-                        <p>   • Inserte la opcion 1.</p>
+                        <p>   • Inserte la ruta a modificar. </p>
                         <div class = "text-black">  
-                            <input type="text" name="tipo_de_dato"/>
+                            <input type="text" name="opcion1" value="Parque"/>
                         </div>
-                        <p>   • Inserte la opcion 2.</p>
+                        <p>   • Inserte la opcion correcta. </p>
                         <div class = "text-black">  
-                            <input type="text" name="tipo_de_dato"/>
+                            <input type="text" name="opcion1" value="Bicicleta"/>
                         </div>
-                        <p>   • Inserte la opcion 3.</p>
+                        <p>   • Inserte la opcion trampa 1. </p>
                         <div class = "text-black">  
-                            <input type="text" name="tipo_de_dato"/>
+                            <input type="text" name="opcion2" value="Micicleta"/>
+                        </div>
+                        <p>   • Inserte la opcion trampa 2.</p>
+                        <div class = "text-black">  
+                            <input type="text" name="opcion3" value="Vicicleta"/>
                         </div>
 
                         <div>

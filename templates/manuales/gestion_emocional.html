@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>Manual</title>
+</head>
+    <body>
+        <div> 
+			<header> 
+				<nav class="flex items-center justify-between flex-wrap bg-amber-500 p-2">
+					<!-- Colocar logo-->
+						<div class="flex items-center flex-shrink-0 text-white ml-10">
+
+							<a href="{{url_for('home')}}">
+								<img src="./static/images/logo_.png" alt="Logo" class="h-16 w-40">
+							</a>
+							<!-- <span class="font-semibold text-xl tracking-tight">Logo del Juego </span>
+							-->
+						</div>
+						<div class="block lg:hidden">
+							<button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+								<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+							</button>
+						</div>
+						<div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+							<div class="text-sm lg:flex-grow">
+								
+							</div>
+							<div class="justify-between">
+								
+                                <a href="{{url_for('idiomas')}}">
+									<img src="./static/images/idiomas_button_violet.png" class=" inline-block h-12 hover:transform hover:-translate-y-1 hover:scale-110">
+								</a>
+								<!-- Boton de instrucciones --> 
+								<a href="{{url_for('manual')}}">								
+									<img src="./static/images/button_interrogacion_violet.png".png class=" inline-block h-12 hover:transform hover:-translate-y-1 hover:scale-110 mr-10">    
+								</a>
+							</div>
+						</div>
+				</header>
+
+    
+    <!--Texto nombre del juego-->
+    <div class="text-white flex justify-center w-full"> 
+        <h1 class="font-bold text-6xl mt-14"> Jaggy Game Educacion Emocional </h1>
+    </div>
+    <div>
+        <div class="w-60 h-40 mx-auto mt-10"> 
+            <a href="{{url}}">
+            <img src="./static/images/button_jugar_inicio.png" alt="Button Jugar" class="hover:transform hover:-translate-y-1 hover:scale-110">
+            </a>
+        </div>
+   </div>
+<div class="flex flex-row">
+        <!--Texto -->
+        <div class="bg-purple-700 opacity-80 text-justify text-2xl text-white w-1/2 m-10 rounded-2xl p-8">
+                <p class=" pb-5">La educación emocional está basada en la inteligencia emocional y se enfoca en el desarrollo de la capacidad de percibir, evaluar y expresar sus emociones. El juego consiste en presentar una novela gráfica, es decir, un cuento interactivo, con el objetivo de que aprendan a gestionar sus emociones y comunicar sus deseos.</p>              
+                <h2 class="font-bold text-2xl"> Al iniciar el juego en la pantalla principal observaremos una barra de menú del lado izquierdo con las siguientes opciones: </h2>
+                <div class="ml-10 pb-3">
+                    <p>   • Comenzar: Dar click en Comenzar para iniciar el juego.</p>
+                    <p>   • Cargar: Dar click en Cargar para ingresar a partidas guardadas..</p>
+                    <p>   • Opciones: Dar click en Opciones para ajustes del juego.</p>
+                    <p>   • Acerca de: Dar click en Acerca de para obtener más datos del juego.</p>
+                    <p>   • Ayuda: Dar click en Ayuda para desplegar los comandos que controlan los juegos.</p>
+                    <p> • Salir: Dar clic en Salir para salir del juego</p>
+                </div>
+                <h2 class="font-bold text-2xl">Instrucciones especificas</h2>
+                <div class="ml-10 pb-3">
+                <p> • Una vez comenzando el juego en los diálogos pulsar la tecla “espacio” o clic derecho para avanzar en los diálogos.
+                    </p>
+                    <p> • Se presentarán distintas situaciones donde deberá elegir cómo reaccionar haciendo clic derecho en la opción con la que se siente identificado.</p>
+                    <p> • Cada opción de reacción te lleva a distintos escenarios.</p>
+                    <p> • Todas conducen a una moraleja final.</p>
+                    <div class="ml-10 pb-3">
+                    </div>
+                </div>   
+        <!--Mascota-->
+        <div class="ml-20 mt-10">
+            <img src="./static/images/parado_pensando.png" alt="mascota" class="w-5/6">
+        </div> 
+</div>            
+    </body>
+</html>
