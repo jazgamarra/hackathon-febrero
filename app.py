@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for 
-import requests 
+import qrcode
+from PIL import Image
 
 app = Flask(__name__)
 
@@ -72,6 +73,44 @@ def manual_crear_juego():
 @app.route('/idiomas')
 def idiomas():
     return render_template('idiomas.html')  
+
+def qr_generator(url): 
+    # Pasamos el logo que vamos a utilizar en el qr code como una imagen
+    logo_link = './static/images/abrazo.png'
+    logo = Image.open(logo_link)
+
+    # Pasamos los parametros de tamaño y color para nuestro codigo QR
+    basewidth = 100
+    wpercent = (basewidth / float(logo.size[0]))
+    hsize = int((float(logo.size[1]) * float(wpercent)))
+    logo = logo.resize((basewidth, hsize), Image.ANTIALIAS)
+
+    # Creamos una variable para almacenar el codigo de error en caso de que al generar el QR ocurra un errors
+    Qrcode = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
+
+    # Generamos la ruta a la que nuestro codigo QR va a redireccionar
+    Qrcode.add_data(url)
+    # Generamos el codigo QR
+    qrcode.make()
+
+    # Pasamos los parametros de color y posicion de nuestro logo, tambien definimos el color que tendra nuestro QR
+    qrcolor = 'Black'
+    qrimg = Qrcode.make_image(fill_color=qrcolor, back_color="white").convert('RGB')
+    pos = ((qrimg.size[0] - logo.size[0]) // 2, (qrimg.size[1] - logo.size[1]) // 2)
+    qrimg.paste(logo, pos)
+    # Guardamos nuestro codigo QR generado como una imagen
+    qrimg.save(f'static/jaggy.png')
+    # Mostramos un texto una vez que el codigo QR haya sido generado con exito
+    print('Codigo QR generado con exito') 
+
+@app.route('/generar_qr')
+def generar_qr(): 
+    ip = '192.168.100.130:8080'
+    url = 'http://'+ip+'/static/game2/index.html'
+    qr_generator (url)
+    imagen = '/static/jaggy.png'
+    return render_template('visualizar_qr.html', imagen=imagen)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True, port=8080)
