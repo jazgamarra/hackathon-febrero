@@ -83,6 +83,10 @@ def castellano():
 def manual_crear_juego():
     return render_template('manuales/manual_crear_juego.html', url=obtener_url_juegos('crear_juego'))
 
+@app.route('/idiomas')
+def idiomas():
+    return render_template('idiomas.html')  
+
 if __name__ == '__main__':
     app.run(debug=True)      
 

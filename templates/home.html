@@ -13,7 +13,7 @@
 				<header> 
 				<nav class="flex items-center justify-between flex-wrap bg-amber-500 p-2">
 					<!-- Colocar logo-->
-						<div class="flex items-center flex-shrink-0 text-white mr-6">
+						<div class="flex items-center flex-shrink-0 text-white ml-10">
 
 							<a href="{{url_for('home')}}">
 								<img src="./static/images/logo_.png" alt="Logo" class="h-16 w-40">
@@ -32,10 +32,12 @@
 							</div>
 							<div class="justify-between">
 								
-                                <img src="./static/images/idiomas_button_violet.png" class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110">
+                                <a href="{{url_for('idiomas')}}">
+									<img src="./static/images/idiomas_button_violet.png" class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110">
+								</a>
 								<!-- Boton de instrucciones --> 
 								<a href="{{url_for('manual')}}">								
-									<img src="./static/images/button_interrogacion_violet.png".png class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110">    
+									<img src="./static/images/button_interrogacion_violet.png".png class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110 mr-10">    
 								</a>
 							</div>
 						</div>
@@ -45,7 +47,7 @@
 
 		<!-- Contenedor -->
 
-		<div class="flex justify-between max-w-3xl mx-auto mt-20"> 
+		<div class="flex justify-between max-w-2xl mx-auto mt-20"> 
 			
 		<!--Mascota-->
 			<div class="mr-40">
@@ -55,7 +57,7 @@
 		<!-- Jugar-->
 			<div> 
 							<!--Texto nombre del juego-->
-				<div class="text-4xl text-white"> 
+				<div class=" text-white text-center"> 
 					<h1 class="font-bold text-6xl"> Jaggy Game </h1>
 				</div>
 							<!-- Boton de jugar-->

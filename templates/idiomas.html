@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Idiomas</title>
+</head>
+<body style="background-image:url('/static/images/fondo_bg_naranja.png'); background-size: cover;">
+    <header> 
+        <nav class="flex items-center justify-between flex-wrap bg-amber-500 p-2">
+            <!-- Colocar logo-->
+                <div class="flex items-center flex-shrink-0 text-white ml-10">
+
+                    <a href="{{url_for('home')}}">
+                        <img src="./static/images/logo_.png" alt="Logo" class="h-16 w-40">
+                    </a>
+                    <!-- <span class="font-semibold text-xl tracking-tight">Logo del Juego </span>
+                    -->
+                </div>
+                <div class="block lg:hidden">
+                    <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+                        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+                    </button>
+                </div>
+                <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                    <div class="text-sm lg:flex-grow">
+                        
+                    </div>
+                    <div class="justify-between">
+                        
+                        <a href="{{url_for('idiomas')}}">
+                            <img src="./static/images/idiomas_button_violet.png" class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110">
+                        </a>
+                        <!-- Boton de instrucciones --> 
+                        <a href="{{url_for('manual')}}">								
+                            <img src="./static/images/button_interrogacion_violet.png".png class=" inline-block w-28 h-22 hover:transform hover:-translate-y-1 hover:scale-110 mr-10">    
+                        </a>
+                    </div>
+                </div>
+        </header>   
+    <div class="w-full flex justify-center mt-20">
+        <div class=" flex flex-row gap-8 h-12">
+            <!--- Png de button exit-->
+            <div class="font-bold text-white">
+                <img src="/static/images/back_button.png" class="h-12 w-12">  
+            </div>
+        
+            <!--Texto H1-->
+            <div class="text-4xl w-120 h-12 ">
+                <h1 class="mt-1 text-white text-bold">Selecciona tu idioma</h1>
+            </div>
+            <div class="h-12 w-12">  </div>
+        </div>
+    </div>
+    
+    <div class=" w-full flex justify-center mt-4"> 
+        <div class="flex flex-col w-40">
+
+            <div class=" mx-auto mt-2"> 
+                <a href="game_categories.html">
+                    <button>
+                        <img src="/static/images/button_violet_español.png" alt="Button Jugar" class="hover:transform hover:-translate-y-1 hover:scale-110 w-80 h-12">
+                    </button>
+                </a>
+            </div>
+
+            <div class="mx-auto mt-2"> 
+                <a href="game_categories.html">
+                    <button>
+                        <img src="/static/images/guarani_violet_button.png" alt="Button Jugar" class="hover:transform hover:-translate-y-1 hover:scale-110 w-80 h-12">
+                    </button>
+                </a>
+            </div>
+
+            <div class="mx-auto mt-2"> 
+                <button>
+                    <img src="/static/images/ingles_violet_button.png" alt="Button Jugar" class="hover:transform hover:-translate-y-1 hover:scale-110 w-80 h-12">
+                </button>
+            </div>
+
+            <div class="mx-auto mt-2"> 
+                <button>
+                    <img src="/static/images/portugues_violet_button.png" alt="Button Jugar" class="hover:transform hover:-translate-y-1 hover:scale-110 w-80 h-12">
+                </button>
+            </div>
+
+            <div class="mx-auto mt-2">
+                <button>
+                    <img src="/static/images/aleman_violet_button.png" alt="Button Jugar" class="hover:transform hover:-translate-y-1 hover:scale-110 w-80 h-12">
+                </button>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
